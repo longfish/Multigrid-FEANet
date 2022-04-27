@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 
-class FEA_Net_h():
+class FEA_Net():
     # NOTICE: right now for homogeneous anisotropic material only!!
     def __init__(self, data, cfg):
         # set learning rate
