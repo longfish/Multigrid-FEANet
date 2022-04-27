@@ -2,7 +2,7 @@ import numpy as np
 import scipy.io as sio
 
 
-def load_data(snr=None, percent=None):
+def data_loader(snr=None, percent=None):
     num_node = 37
     # Purely thermal
     # data = sio.loadmat('2D_thermoelastic_36by36_xy_fixed_single_data5.mat')
