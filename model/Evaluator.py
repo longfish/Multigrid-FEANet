@@ -1,15 +1,9 @@
-import os
-os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # or any {'0', '1', '2'}
-
 import numpy as np
 import scipy.io as sio
-import tensorflow as tf
+#import tensorflow as tf
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from therm_elast_train_2filters import *
-from data_loader import *
+#from FEA_Net import *
 
 class Evaluator(object):
     def __init__(self, model, data):
@@ -108,7 +102,6 @@ class Evaluator(object):
         self.result = least_squares(self.get_loss,
                                self.model.trainable_var_np,
                                jac=self.get_grads,
-
                                method='trf',
                                gtol=1e-5,
                                # ftol=1e-15,

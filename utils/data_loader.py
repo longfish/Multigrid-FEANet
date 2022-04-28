@@ -2,18 +2,11 @@ import numpy as np
 import scipy.io as sio
 
 
-def data_loader(snr=None, percent=None):
+def load_FEANet_data(snr=None, percent=None):
     num_node = 37
-    # Purely thermal
-    # data = sio.loadmat('2D_thermoelastic_36by36_xy_fixed_single_data5.mat')
-
-    # purely structural
-    #data = sio.loadmat('/home/hope-yao/Documents/MG_net/data/heat_transfer/Downloads/2D_thermoelastic_36by36_xy_fixed_single_data2.mat')
 
     # coupled loading
-    data = sio.loadmat('2D_thermoelastic_36by36_xy_fixed_single_data3.mat')
-    # data = sio.loadmat('2D_thermoelastic_36by36_xy_fixed_single_data4.mat')
-    # data = sio.loadmat('2D_thermoelastic_36by36_xy_fixed_single_all_loading.mat')
+    data = sio.loadmat('data/thermoelastic/2D_thermoelastic_36by36_xy_fixed_single_data_half_loading.mat')
 
     load = np.expand_dims(np.stack([-data['fx'], -data['fy'], data['ftem']], -1), 0).astype('float32')
     resp = np.expand_dims(np.stack([data['ux']*1e6, data['uy']*1e6, data['utem']], -1), 0).astype('float32')
@@ -56,14 +49,5 @@ def data_loader(snr=None, percent=None):
             'test_load': test_load,
             'test_resp': test_resp,
             }
-
-    # num_node = 3
-    # data = {'num_node': num_node,
-    #         'rho': rho,
-    #         'train_load': train_load[:,17:20,17:20,:],
-    #         'train_resp': train_resp[:,17:20,17:20,:],
-    #         'test_load': test_load[:,17:20,17:20,:],
-    #         'test_resp': test_resp[:,17:20,17:20,:],
-    #         }
 
     return data

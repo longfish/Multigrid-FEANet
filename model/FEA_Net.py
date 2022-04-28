@@ -1,12 +1,11 @@
 import numpy as np
 import scipy.io as sio
-import tensorflow as tf
-import matplotlib.pyplot as plt
 from tqdm import tqdm
-
+import torch
+import torch.nn as nn
+from torch.autograd import Variable
 
 class FEA_Net():
-    # NOTICE: right now for homogeneous anisotropic material only!!
     def __init__(self, data, cfg):
         # set learning rate
         self.lr = cfg['lr']
@@ -15,7 +14,7 @@ class FEA_Net():
 
         # data related
         self.num_node = data['num_node']
-        self.E, self.mu, self.k, self.alpha = self.rho = data['rho'] #
+        self.E, self.mu, self.k, self.alpha = self.rho = data['rho'] 
 
         # 3 dimensional in and out, defined on the nodes
         self.load_pl = tf.placeholder(tf.float32, shape=(None, data['num_node'], data['num_node'], 3), name='load_pl')
@@ -34,13 +33,13 @@ class FEA_Net():
 
     def apply_physics_constrain(self):
         # known physics
-        self.wxx_tf = tf.constant(self.wxx_ref)
-        self.wyy_tf = tf.constant(self.wyy_ref)
-        self.wxy_tf = tf.constant(self.wxy_ref)
-        self.wyx_tf = tf.constant(self.wyx_ref)
-        self.wtt_tf = tf.constant(self.wtt_ref)
-        self.wtx_tf = tf.constant(self.wtx_ref)
-        self.wty_tf = tf.constant(self.wty_ref)
+        self.wxx_tf = torch.tensor(self.wxx_ref)
+        self.wyy_tf = torch.tensor(self.wyy_ref)
+        self.wxy_tf = torch.tensor(self.wxy_ref)
+        self.wyx_tf = torch.tensor(self.wyx_ref)
+        self.wtt_tf = torch.tensor(self.wtt_ref)
+        self.wtx_tf = torch.tensor(self.wtx_ref)
+        self.wty_tf = torch.tensor(self.wty_ref)
 
         # unknown physics
         self.wxt_np = np.zeros_like(self.wxt_ref)  # * 1.9
