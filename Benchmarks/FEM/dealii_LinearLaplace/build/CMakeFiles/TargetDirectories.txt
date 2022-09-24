@@ -1,0 +1,10 @@
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/rebuild_cache.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/info.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/edit_cache.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/strip_comments.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/distclean.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/runclean.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/release.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/debug.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/run.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build/CMakeFiles/linear_laplace.dir

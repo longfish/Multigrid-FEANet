@@ -1,0 +1,10 @@
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/rebuild_cache.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/info.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/edit_cache.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/strip_comments.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/distclean.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/runclean.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/release.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/run.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/debug.dir
+/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/FEM_dealii_heat/CMakeFiles/heat.dir
