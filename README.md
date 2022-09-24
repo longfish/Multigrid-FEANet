@@ -1,4 +1,4 @@
-# FEA-Net-Torch
+# MM-FEANet
 
 There are several notebooks in root directory
 * FEANet_Interface.ipynb: multichannel FEANet to solve two-phase problem
