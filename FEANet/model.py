@@ -28,6 +28,12 @@ class KNet(nn.Module):
         for pkey in self.kernel_dict:
             self.global_pattern[0,pkey,:,:] = torch.from_numpy(global_pattern_center[pkey]).reshape(self.nnode_edge, self.nnode_edge)
 
+    def split_x(self, x):
+        '''Split the field x based on the material phase'''
+        x_split = self.net1(x)
+        x_split = x_split*self.global_pattern
+        return x_split
+
 class FNet(nn.Module):
     def __init__(self, h):
         super(FNet, self).__init__()
