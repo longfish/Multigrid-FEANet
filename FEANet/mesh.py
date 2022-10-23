@@ -10,7 +10,7 @@ class MeshHandler():
         nnode_edge: number of nodes along edges of the plate
     """
 
-    def __init__(self, size = 2, prop = [1,20], nnode_edge = 65, outfile = None):
+    def __init__(self, size = 2, prop = [1,20], nnode_edge = 65, shape = 0, outfile = None):
         self.size = size
         self.nnode_edge = nnode_edge
         self.points, self.cells, self.mesh = None, None, None
@@ -31,7 +31,11 @@ class MeshHandler():
                                     [1.,2.,1.,-4.]], dtype=np.float32)
         self.kernel_dict = {} # Dictionary to store pytorch kernels
         self.generate_mesh()
-        self.place_circle()
+        if (shape == 0):
+            self.place_circle()
+        elif(shape == 1):
+            self.place_rect()
+
         self.identify_patterns()
         self.generate_global_pattern_map()
         self.generate_kernel()
@@ -60,6 +64,14 @@ class MeshHandler():
             element_centroid = np.mean(self.points[self.cells[i]],axis=0)
             r = (element_centroid[0]-center[0])**2+(element_centroid[1]-center[1])**2
             if(r < radius**2):
+                self.phase[i] = 1
+        self.mesh.cell_data['Phase'] = self.phase
+
+    def place_rect(self, center=[0, 0], r=0.5):
+        for i in range(self.phase.shape[0]):
+            element_centroid = np.mean(self.points[self.cells[i]],axis=0)
+            #r = (element_centroid[0]-center[0])**2+(element_centroid[1]-center[1])**2
+            if(abs(element_centroid[0]-center[0]) < r and abs(element_centroid[1]-center[1]) < r):
                 self.phase[i] = 1
         self.mesh.cell_data['Phase'] = self.phase
 
