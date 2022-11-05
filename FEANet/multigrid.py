@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from FEANet.geo import Geometry
-from FEANet.mesh import MeshHandler
+from FEANet.mesh import MeshCircInterface
 from FEANet.model import KNet, FNet
 from FEANet.jacobi import JacobiBlock
 
@@ -22,7 +22,7 @@ class SingleGrid():
         self.omega = 2/3.
         self.property = [1, 20] # homogeneous problem
         self.plate = Geometry(nnode_edge = n+1)
-        self.grid = MeshHandler(size, prop=self.property, nnode_edge=n+1)
+        self.grid = MeshCircInterface(size, prop=self.property, nnode_edge=n+1)
         self.v = torch.zeros((1, 1, n+1, n+1), requires_grad=False, dtype=torch.float32)
         self.f = torch.zeros((1, 1, n+1, n+1), requires_grad=False, dtype=torch.float32)
         self.InstantiateFEANet()
