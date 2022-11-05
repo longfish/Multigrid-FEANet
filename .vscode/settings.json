@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "iosfwd": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/Archive/FEM/dealii_LinearLaplace"
 }

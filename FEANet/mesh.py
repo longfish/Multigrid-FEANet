@@ -59,7 +59,7 @@ class MeshHandler():
         self.cells[:,3] = np.ravel(nodes[1:,:self.nnode_edge-1])
         self.mesh = meshio.Mesh(self.points, [("quad",self.cells)])
 
-    def place_circle(self, center=[0, 0], radius=0.5):
+    def place_circle(self, center=[0.2, 0.2], radius=0.5):
         for i in range(self.phase.shape[0]):
             element_centroid = np.mean(self.points[self.cells[i]],axis=0)
             r = (element_centroid[0]-center[0])**2+(element_centroid[1]-center[1])**2

@@ -12,6 +12,12 @@ def plot_field(img,fname=None,limit=None):
         im = plt.imshow(img)
     else:
         im = plt.imshow(img,vmin=limit[0],vmax=limit[1])
+    
+    ax = plt.gca()
+    ax.invert_xaxis()
+    ax.invert_yaxis()
+    
+    plt.axis('off')
     plt.colorbar(im)
     if fname is not None:
         fig.savefig(r'./'+fname, bbox_inches='tight')

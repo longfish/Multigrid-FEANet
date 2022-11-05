@@ -1,0 +1,10 @@
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/linear_laplace.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/run.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/debug.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/release.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/runclean.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/distclean.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/strip_comments.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/info.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/edit_cache.dir
+/home/cmeng12/Documents/MM-FEANet/build/CMakeFiles/rebuild_cache.dir

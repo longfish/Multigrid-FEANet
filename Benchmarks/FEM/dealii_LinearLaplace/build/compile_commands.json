@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/build",
-  "command": "/bin/g++  -DBOOST_NO_AUTO_PTR -DDEBUG -isystem /home/cmeng12/Software/dealii/include -isystem /home/cmeng12/Software/dealii/include/deal.II/bundled -isystem /usr/include/suitesparse    -pedantic -fPIC -Wall -Wextra -Wmissing-braces -Woverloaded-virtual -Wpointer-arith -Wsign-compare -Wswitch -Wsynth -Wwrite-strings -Wno-placement-new -Wno-literal-suffix -Wno-psabi -Wno-class-memaccess -fopenmp-simd -Wno-parentheses -Wno-unused-local-typedefs -O0 -ggdb -Wa,--compress-debug-sections -o CMakeFiles/linear_laplace.dir/linear_laplace.cc.o -c /home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/linear_laplace.cc",
-  "file": "/home/cmeng12/Documents/Multigrid-FEA/Benchmarks/Time-independent_problems/FEM_dealii_LinearLaplace/linear_laplace.cc"
-}
-]
