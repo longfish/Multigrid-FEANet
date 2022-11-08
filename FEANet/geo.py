@@ -27,11 +27,11 @@ class Geometry():
         self.boundary_value[0, 0,  0, :] = 0.0
         self.boundary_value[0, 0,  :,-1] = 0.0
         self.boundary_value[0, 0, -1, :] = 0.0
-        self.boundary_value[0, 0, 1:, 0] = 0.0 
+        self.boundary_value[0, 0, :, 0] = 0.0 
     
-    def set_square_bc(self, bc):
+    def set_square_bc(self, bc_values):
         '''Input bc is a 2D array, only the locations at boundaries have values'''
-        self.boundary_value[0, 0, :, :] = bc
+        self.boundary_value[0, 0, :, :] = bc_values
 
 
     def l_shaped_geometry(self, nnode_edge, l_cutout_size=None):
