@@ -20,7 +20,7 @@ class JacobiBlock():
         self.boundary_value = boundary_value
         self.omega = omega
         self.mesh = mesh
-        self.d_mat = torch.zeros((1, 1, self.nnode_edge, self.nnode_edge)) # Diagonal matrix for Jacobi iteration
+        self.d_mat = torch.zeros_like(geometry_idx) # Diagonal matrix for Jacobi iteration
         self.compute_diagonal_matrix()
         self.Knet = Knet # Initialize the stiffness network, given mesh
 
@@ -30,10 +30,11 @@ class JacobiBlock():
 
     def compute_diagonal_matrix(self):
         """ Comopute diagonal matrix for Jacobi iteration """
-        for pkey in self.mesh.kernel_dict:
-            K_weights = torch.from_numpy(self.mesh.kernel_dict[pkey]) ## 3x3 size kernel
-            global_pattern = torch.from_numpy(self.mesh.global_pattern_center[pkey]).reshape(self.nnode_edge, self.nnode_edge)
-            self.d_mat[0,0,:,:] += global_pattern*K_weights[1,1] 
+        for i in range(self.d_mat.shape[0]):
+            for pkey in self.mesh.kernel_dict:
+                K_weights = torch.from_numpy(self.mesh.kernel_dict[pkey]) ## 3x3 size kernel
+                global_pattern = torch.from_numpy(self.mesh.global_pattern_center[pkey]).reshape(self.nnode_edge, self.nnode_edge)
+                self.d_mat[i,0,:,:] += global_pattern*K_weights[1,1] 
 
     def jacobi_iteration_step(self, u, forcing_term):
         """ Jacobi method iteration step defined as a convolution:
