@@ -226,63 +226,63 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_iostreams",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_iostreams.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_serialization",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_serialization.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_system",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_thread",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_thread.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_regex",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_regex.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_chrono",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_chrono.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_date_time",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_date_time.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lboost_atomic",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_atomic.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lumfpack",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libumfpack.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lcholmod",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libcholmod.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lccolamd",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libccolamd.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lcolamd",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libcolamd.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lcamd",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libcamd.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lsuitesparseconfig",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lamd",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libamd.so",
 				"role" : "libraries"
 			},
 			{
@@ -290,7 +290,7 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-larpack",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libarpack.so",
 				"role" : "libraries"
 			},
 			{
