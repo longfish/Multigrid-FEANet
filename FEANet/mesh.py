@@ -133,8 +133,7 @@ class MeshSquare():
         self.nnode_edge = nnode_edge
         self.points, self.cells, self.mesh = None, None, None
         self.global_pattern_center = {} # Dictionary to store global pattern maps, center nodes
-        self.pattern = np.zeros((nnode_edge*nnode_edge,4),dtype=int) # Pattern indices of each node, 
-                                                                     # e.g., [1,0,1,0] means e1 and e3 are phase-1
+
         self.a = np.array([1.], dtype=np.float32) # Coefficients of linear Laplace equation
         # Reference pattern dictionary
         self.ref_pattern_dict = {0:[0,0,0,0]}
