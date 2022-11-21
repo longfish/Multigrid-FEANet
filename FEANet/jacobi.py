@@ -2,7 +2,7 @@ import torch
 import numpy as np
 
 class JacobiBlock():
-    """ Define all the methods necessary for a CNN-based Jacobi iteration 
+    """ Define all the methods necessary for a CNN-based Jacobi iteration (Dirichlet boundary condition)
         
         Knet: neural network model for stiffness terms
         mesh: an object that define the mesh
@@ -59,3 +59,11 @@ class JacobiBlock():
             #error[i] = torch.sqrt(torch.sum((u - u_prev) ** 2)).item() / torch.sqrt(torch.sum((u) ** 2)).item()
 
         return u #, error
+
+class JacobiBlockPBC():
+    """ Define all the methods necessary for a CNN-based Jacobi iteration (periodic boundary condition)
+        
+        Knet: neural network model for stiffness terms
+    """
+    def __init__(self, Knet, mesh, omega, n):
+        self.nnode_edge = n
