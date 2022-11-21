@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
+import torch.nn.functional as F
 
 """Note that input of KNet and FNet model is a batch of images with dimension of (N, Cin, H, W), N is batch size, Cin is number of channels."""
 
@@ -19,8 +20,13 @@ class KNet(nn.Module):
             self.net2.state_dict()['weight'][0][pkey] = torch.from_numpy(self.kernel_dict[pkey]) ## 3x3 size kernel
 
     def forward(self, u):
+        _,_,H,_ = u.shape
         u_split = self.net1(u)
-        u_split = u_split*self.global_pattern
+        if(H == self.nnode_edge):
+            g_pattern = self.global_pattern
+        else:
+            g_pattern = F.pad(self.global_pattern,(1,1,1,1),'constant', 0)
+        u_split = u_split*g_pattern
         return self.net2(u_split)
     
     def convert_global_pattern(self, global_pattern_center):
