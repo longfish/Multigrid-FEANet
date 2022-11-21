@@ -25,7 +25,7 @@ class KNet(nn.Module):
         if(H == self.nnode_edge):
             g_pattern = self.global_pattern
         else:
-            g_pattern = F.pad(self.global_pattern,(1,1,1,1),'constant', 0)
+            g_pattern = F.pad(self.global_pattern,(1,1,1,1),'constant', 1)
         u_split = u_split*g_pattern
         return self.net2(u_split)
     
