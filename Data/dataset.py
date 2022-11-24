@@ -49,3 +49,21 @@ class IsoPoissonDataSet(Dataset):
             bc_index_tensor = self.transform(bc_index_tensor)
             bc_value_tensor = self.transform(bc_value_tensor)
         return u_tensor, f_tensor, bc_value_tensor, bc_index_tensor
+
+class IsoPoissonPBCDataSet(Dataset):
+    '''Dataset stores f'''
+    def __init__(self, h5file, transform=None, target_transform=None):
+        h5 = h5py.File(h5file, 'r')
+        self.f = np.array(h5['rhs'], dtype=np.float32)
+        self.totensor = ToTensor()
+        self.transform = transform
+        self.target_transform = target_transform
+
+    def __len__(self):
+        return self.f.shape[0]
+
+    def __getitem__(self, idx):
+        f_tensor = self.totensor(self.f[idx])
+        if self.transform:
+            f_tensor = self.transform(f_tensor)
+        return f_tensor
