@@ -36,8 +36,14 @@ class KNet(nn.Module):
 
     def split_x(self, x):
         '''Split the field x based on the material phase'''
+        _,_,H,_ = x.shape
         x_split = self.net1(x)
-        x_split = x_split*self.global_pattern
+        if(H == self.nnode_edge):
+            g_pattern = self.global_pattern
+        else:
+            g_pattern = F.pad(self.global_pattern,(1,1,1,1),'constant', 1)
+
+        x_split = x_split*g_pattern
         return x_split
 
 class FNet(nn.Module):
