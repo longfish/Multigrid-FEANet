@@ -1,3 +1,3 @@
 # MM-FEANet
 
-Learn inter-grid operators to improve the computational efficiency of FEANet.
+A Multilevel Finite Element Convolutional Network for Predicting the Mechanical Responses with High Efficiency
