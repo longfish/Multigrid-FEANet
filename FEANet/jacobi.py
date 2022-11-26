@@ -87,7 +87,7 @@ class JacobiBlockPBC():
         Expand the domain boundary to be periodic
         Input size [n+1, n+1]; output size [n+3, n+3]
         """
-        u_central = u[:,:,:-1,:-1]
+        u_central = u[:,:,:-1,:-1].clone()
         return F.pad(u_central, (1,2,1,2), 'circular')
 
     def reset_boundary(self, u):
@@ -95,7 +95,7 @@ class JacobiBlockPBC():
         Copy the boundary values to be the same
         Input size [n+1, n+1]; output size [n+1, n+1]
         """
-        u_central = u[:,:,:-1,:-1]
+        u_central = u[:,:,:-1,:-1].clone()
         return F.pad(u_central, (0,1,0,1), 'circular')
 
     def jacobi_convolution(self, u, forcing_term):
@@ -106,6 +106,6 @@ class JacobiBlockPBC():
         """
         u_pbc = self.pbc_boundary(u)
         residual = forcing_term-self.Knet(u_pbc)
-        residual = residual[:,:,1:-1,1:-1] # due to padding = 1, need to remove the most outside boundary layer of residual
+        residual = residual[:,:,1:-1,1:-1].clone() # due to padding = 1, need to remove the most outside boundary layer of residual
         u_new = self.omega/self.d_mat*residual + self.reset_boundary(u)
         return u_new
