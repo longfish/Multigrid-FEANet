@@ -37,29 +37,16 @@ class JacobiBlock():
                 global_pattern = torch.from_numpy(self.mesh.global_pattern_center[pkey]).reshape(self.nnode_edge, self.nnode_edge)
                 self.d_mat[i,0,:,:] += global_pattern*K_weights[1,1] 
 
-    def jacobi_iteration_step(self, u, forcing_term):
+    def jacobi_convolution(self, initial_u, forcing_term):
         """ Jacobi method iteration step defined as a convolution:
         u_new = omega/d_mat*residual + u, where residual = f - K*u (* is convolution operator here)
         note that the forcing_term should be already convoluted, i.e., forcing_term = fnet(f), when source term is f
         """
+        u = self.reset_boundary(initial_u)
         residual = forcing_term-self.Knet(u)
         u_new = self.omega/self.d_mat*residual + u
         return self.reset_boundary(u_new)
 
-    def jacobi_convolution(self, initial_u, forcing_term, n_iter = 1000):
-        """ Compute jacobi method solution by convolution. 
-
-            Return: 
-                u """
-
-        u = self.reset_boundary(initial_u)
-        #error = np.zeros((n_iter,))
-        for i in range(n_iter):
-            #u_prev = u
-            u = self.jacobi_iteration_step(u, forcing_term)
-            #error[i] = torch.sqrt(torch.sum((u - u_prev) ** 2)).item() / torch.sqrt(torch.sum((u) ** 2)).item()
-
-        return u #, error
 
 class JacobiBlockPBC():
     """ Define all the methods necessary for a CNN-based Jacobi iteration (periodic boundary condition); currently only for homogeneous problems
