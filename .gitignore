@@ -1,3 +1,7 @@
 Data/IsoPoisson/*.h5
 Data/RHS/*.mat
 Data/RHS/*.h5
+build/*
+Data/__pycache__
+FEANet/__pycache__
+Utils/__pycache__
