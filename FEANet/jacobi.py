@@ -13,7 +13,6 @@ class JacobiBlock():
             Matrix describing the domain: 1.0 for inner points 0.0 elsewhere.
         boundary_value: tensor-like, shape = [*, *, n, n]
             Matrix describing the domain: desired values for boundary points 0.0 elsewhere.
-        n_iter: number of Jacobi iterations
     """
     def __init__(self, Knet, mesh, omega, geometry_idx, boundary_value):
         self.nnode_edge = geometry_idx.shape[2]
