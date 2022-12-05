@@ -20,7 +20,7 @@ def plot_field(img,fname=None,limit=None):
     plt.axis('off')
     plt.colorbar(im)
     if fname is not None:
-        fig.savefig(r'./'+fname, bbox_inches='tight')
+        fig.savefig(fname, bbox_inches='tight',dpi=500)
     plt.draw()
     plt.show()
 
