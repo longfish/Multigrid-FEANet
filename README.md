@@ -1,3 +1,3 @@
-# MM-FEANet
+# Multigrid-FEANet
 
-A Multilevel Finite Element Convolutional Network for Predicting the Mechanical Responses with High Efficiency
+A multigrid finite element neural network for efficient material response prediction (submitted to AIAA SciTech 2023)
